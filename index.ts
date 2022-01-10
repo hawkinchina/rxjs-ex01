@@ -29,13 +29,14 @@ fromEvent(button, 'click').subscribe(() =>
 //阶段一: 极简版; 同步输出..
 function simpleObservable(observer) {
   for (let i = 0; i < 10; i++) {
-    observer.next(i);
+    observer.next(i, i + 100);
   }
   observer.complete();
 }
 
 const observer = {
-  next: (value) => console.log(`next -> ${value}`),
+  next: (value, another) =>
+    console.log(`next -> ${value}`, `another -> ${another}`),
   error: () => {},
   complete: () => console.log('complete'),
 };
