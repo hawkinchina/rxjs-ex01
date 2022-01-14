@@ -94,7 +94,9 @@ const example = of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).pipe(
   map((val) => val * 1000)
 );
 
-// 输出:
+// 输出example:
 const subscribe = example.subscribe((val) => console.log(val));
+
+//07.
 
 // Open the console in the bottom right to see results.
